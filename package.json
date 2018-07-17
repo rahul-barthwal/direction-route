@@ -1,0 +1,16 @@
+{
+  "name": "driving-route",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^3.6.0"
+  },
+  "scripts": {
+    "install-client": "cd frontend && npm install",
+    "install-server": "cd backend && npm install",
+    "client": "cd frontend && npm run start",
+    "server": "cd backend && node index.js",
+    "install": "concurrently --kill-others-on-fail \"npm run install-server\" \"npm run install-client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  }
+}
